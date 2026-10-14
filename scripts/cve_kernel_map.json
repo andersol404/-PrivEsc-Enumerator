@@ -1,0 +1,40 @@
+{
+  "5.4.0": {
+    "notes": "Kernel 5.4.x is common in Ubuntu/Debian challenge images. Triage for local-root CVEs and sudo/SUID misconfigs before attempting a kernel exploit.",
+    "likely_vectors": [
+      "CVE-2021-3156 (sudoedit / sudo Baron Samedit)",
+      "CVE-2022-0847 (Dirty Pipe)",
+      "CVE-2023-0386 (OverlayFS)",
+      "SUID/GTFOBins checks",
+      "Cron/systemd writable scripts"
+    ]
+  },
+  "5.10.0": {
+    "notes": "Kernel 5.10.x often appears in newer Ubuntu and Debian images; check for local privilege-escalation vectors and root-owned writable files.",
+    "likely_vectors": [
+      "CVE-2022-0847 (Dirty Pipe)",
+      "Kernel module / LSM exploitation path",
+      "Sudoers misconfigurations",
+      "Writable cron/systemd paths"
+    ]
+  },
+  "5.15.0": {
+    "notes": "Kernel 5.15.x is commonly used in modern Linux challenge environments. Always validate the exact distro and build before assuming a CVE path.",
+    "likely_vectors": [
+      "CVE-2023-0386 (OverlayFS)",
+      "CVE-2022-0847 (Dirty Pipe)",
+      "sudo NOPASSWD / sudoers abuse",
+      "SUID binary abuse",
+      "Cron/systemd script injection"
+    ]
+  },
+  "6.1.0": {
+    "notes": "Kernel 6.1.x is a common modern target. Prioritize local root checks for writable scripts and sudo misconfigurations before kernel exploits.",
+    "likely_vectors": [
+      "Local root CVEs tied to the exact distro build",
+      "SUID binary abuse",
+      "Cron/systemd root execution",
+      "sudoers misconfiguration"
+    ]
+  }
+}
